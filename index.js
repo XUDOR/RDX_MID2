@@ -3,6 +3,9 @@ const express = require('express');
 const pool = require('./db'); // Import the pool from db.js
 const app = express();
 
+app.use(express.static('public'));
+
+
 app.use(express.json()); // For parsing application/json
 
 app.get('/data', async (req, res) => {
