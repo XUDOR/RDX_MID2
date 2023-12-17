@@ -5,6 +5,28 @@ const app = express();
 
 app.use(express.json()); // For parsing application/json
 
+app.get('/data', async (req, res) => {
+  try {
+    const allData = await pool.query("SELECT * FROM your_table");
+    res.json(allData.rows);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+
+app.get('/data/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const data = await pool.query("SELECT * FROM your_table WHERE id = $1", [id]);
+    res.json(data.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+
+
 // POST route for creating data
 app.post('/data', async (req, res) => {
   try {
