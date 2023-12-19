@@ -1,12 +1,13 @@
 /* styles.css */
 body {
-  font-family: Arial, sans-serif;
+  background-color: #8FA338;
+  font-family: 'Times New Roman', Times, serif;
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color: #f5f5f5;
+  background-color: #868C07;
   padding: 1em;
   display: flex;
   align-items: center;
@@ -24,11 +25,11 @@ header {
 
 
 #title {
-  font-size: 48px;
-  font-weight: bold;
+  font-size: 60px;
+  font-weight: thin;
   background-color: #778264;
   padding: 20px;
-  color: white;
+  color: #f9f8d4;
 }
 
 #nav-section {
@@ -37,18 +38,44 @@ header {
 
 }
 nav ul {
-  height: 75px;
+  height: 108px;
   list-style: none;
-  padding: 0;
+  padding: 3px;
   display: flex;
   margin: 0;
 
 }
 
 nav ul li {
-  background-color: white;
-  font-style: helvetica;
-  font-weight: thin;
+  padding-top: 10px;
+  margin-left: 5px;
   margin-right: 10px;
-  padding: 10px;
+
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  background-color: #e0e0e0;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3;
+
+}
+
+nav ul li a:hover {
+  background-color: #d0d0d0;
+  color: #000;
+}
+
+nav ul li a:active, nav ul li a:focus {
+  background-color: #c0c0c0;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  nav ul li a {
+    padding: 15px 20px;
+    font-size: larger;
+  }
 }
